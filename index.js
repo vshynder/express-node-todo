@@ -2,7 +2,6 @@ const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
 const exphbs = require("express-handlebars");
-const morgan = require("morgan");
 const dotenv = require("dotenv");
 dotenv.config();
 
@@ -20,7 +19,6 @@ app.engine("hbs", hbs.engine);
 app.set("view engine", "hbs");
 app.set("views", "views");
 
-app.use(morgan("tiny"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
